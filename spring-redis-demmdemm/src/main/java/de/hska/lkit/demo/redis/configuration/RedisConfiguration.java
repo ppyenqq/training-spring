@@ -7,7 +7,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
-/*
+/*ggggggggggggggggggggggguu
  * Kurzgesagt: die Klasse ermöglicht den Verbindungsaufbau und den Datenaustausch
  * 			   zwischen dem Projekt und den Redisserver
  * 

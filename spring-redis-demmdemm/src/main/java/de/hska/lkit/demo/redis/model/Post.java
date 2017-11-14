@@ -9,6 +9,7 @@ public class Post implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	String postId;
+	int t;
 	String content;
 	public Post() {
 		
