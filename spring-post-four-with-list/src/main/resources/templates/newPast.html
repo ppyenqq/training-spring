@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>create and save new user</title>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- The above 3 meta tags *must* come first in the head -->
+<link th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+	rel="stylesheet" media="screen" />
+</head>
+<body>
+	<div class="container">
+	
+		<h1>add new Past</h1>
+		
+		<form class="form" action="#" th:action="@{/addpast}"
+			th:object="${past}" method="post">
+			<div class="form-group">
+				<label> content </label> <input type="text" th:field="*{content}" />
+			</div>
+			
+			<div class="form-group">
+				<label> author </label> <input type="text" th:field="*{author}" />
+			</div>
+			<button type="submit" class="btn btn-default">Save</button>
+		</form>
+		
+	</div>
+	<p>.</p>
+	<div class="container">
+
+		<h3>all Past</h3>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>key</th>
+					<th>content</th>
+					<th>author</th>
+					
+					<th>id</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="element : ${pasts}">
+					<td th:text="${element.key}">key</td>
+					<td th:text="${element.value.content}">Some name</td>
+					<td th:text="${element.value.author}">Some name</td>
+				
+					<td th:text="${element.value.id}">Some name</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+	<p>..</p>
+	<p> <span th:text="${message}" /></p>
+	<p> <span th:text="${heyo}" /></p>
+	<p> <span th:text="${pastlist}" /></p>
+	<!-- <p> <span th:text="${pastliste}" /></p> -->
+	<tbody>
+    <tr th:each="item1: ${pastliste}">
+		<td th:text="${item1}" />
+       <!--  <td th:text="${student.id}" />
+        <td th:text="${student.name}" /> -->
+    </tr>
+	</tbody>
+	<tbody>
+	    <tr th:each="item2: ${oneUserPastliste}">
+			<td th:text="${item2}" />
+	       
+	    </tr>
+	</tbody>
+<!-- 	<div class="container">
+
+		<h3>all Past List</h3>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>key</th>
+					<th>content</th>
+					<th>author</th>
+					
+					<th>id</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="elemente : ${pastlist}">
+					<td th:text="${elemente.}">key</td>
+					<td th:text="${elemente.content}">Some name</td>
+					<td th:text="${elemente.author}">Some name</td>
+				
+					<td th:text="${elemente.id}">Some name</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div> -->
+</body>
+</html>

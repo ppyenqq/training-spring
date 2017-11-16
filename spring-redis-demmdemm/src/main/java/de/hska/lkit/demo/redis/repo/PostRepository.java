@@ -2,7 +2,7 @@ package de.hska.lkit.demo.redis.repo;
 
 import java.util.Map;
 
-import de.hska.lkit.demo.redis.model.User;
+import de.hska.lkit.demo.redis.model.Post;
 
 public interface PostRepository {
 	
@@ -11,7 +11,7 @@ public interface PostRepository {
 	 * 
 	 * @param user
 	 */
-	public void saveUser(User user);
+	public void saveUser(Post user);
 	
 	
 	/**
@@ -19,7 +19,7 @@ public interface PostRepository {
 	 * 
 	 * @return
 	 */
-	public Map<String, User> getAllUsers();
+	public Map<String, Post> getAllUsers();
 	
 	
 	/**
@@ -28,7 +28,7 @@ public interface PostRepository {
 	 * @param username
 	 * @return
 	 */
-	public User getUser(String username);
+	public Post getUser(String username);
 
 
 	/**
@@ -38,6 +38,6 @@ public interface PostRepository {
 	 * @param characters
 	 * @return
 	 */
-	public Map<String, User> findUsersWith(String characters);
+	public Map<String, Post> findUsersWith(String characters);
 	
 }

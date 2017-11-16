@@ -2,30 +2,57 @@ package de.hska.lkit.demo.redis.model;
 
 import java.io.Serializable;
 
-public class Post implements Serializable{
-	
-	/**
-	 * 
-	 */
+public class Post implements Serializable {
 	private static final long serialVersionUID = 1L;
-	String postId;
-	String content;
-	public Post() {
-		
-	}
-	public String getPostId() {
-		return postId;
-	}
-	public void setPostId(String postId) {
-		this.postId = postId;
-	}
-	public String getContent() {
-		return content;
-	}
-	public void setContent(String content) {
-		this.content = content;
-	}
-	
 
-	
+	private String id;
+	private String username;
+	private String password;
+	private String firstname;
+	private String lastname;
+
+	public Post() {
+
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import de.hska.lkit.demo.redis.model.User;
+import de.hska.lkit.demo.redis.model.Post;
 import de.hska.lkit.demo.redis.repo.PostRepository;
 
 /**
@@ -37,7 +37,7 @@ public class PostController {
 	 */
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
 	public String getAllUsers(Model model) {
-		Map<String, User> retrievedUsers = userRepository.getAllUsers();
+		Map<String, Post> retrievedUsers = userRepository.getAllUsers();
 		model.addAttribute("users", retrievedUsers);
 
 		return "users";
@@ -65,7 +65,7 @@ public class PostController {
 	 * @return
 	 */
 	@RequestMapping(value = "/adduser", method = RequestMethod.GET)
-	public String addUser(@ModelAttribute User user) {
+	public String addUser(@ModelAttribute Post user) {
 		return "newUser";
 	}
 
@@ -78,12 +78,12 @@ public class PostController {
 	 * @return
 	 */
 	@RequestMapping(value = "/adduser", method = RequestMethod.POST)
-	public String saveUser(@ModelAttribute User user, Model model) {
+	public String saveUser(@ModelAttribute Post user, Model model) {
 
 		userRepository.saveUser(user);
 		model.addAttribute("message", "User successfully added");
 
-		Map<String, User> retrievedUsers = userRepository.getAllUsers();
+		Map<String, Post> retrievedUsers = userRepository.getAllUsers();
 
 		model.addAttribute("users", retrievedUsers);
 		return "users";
