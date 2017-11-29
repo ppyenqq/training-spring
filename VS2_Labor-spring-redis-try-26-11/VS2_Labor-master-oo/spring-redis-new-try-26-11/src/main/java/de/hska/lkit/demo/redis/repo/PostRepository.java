@@ -9,9 +9,10 @@ import de.hska.lkit.demo.redis.model.User;
 
 public interface PostRepository {
 	
-	public void addPost (Post post);
-	
-	public List<String> getAllPosts();
-	
-	public Post getPost(String username);
+	public void savePost (Post post);
+	public Map<String, Post> getAllPost();
+	public List<String> getAllPostList();
+	public List<String> getOneUsersPost(String authorname);
+	public List<String> getOneUsersPost22(String authorname);
+	//public Post getPost(String username);
 }

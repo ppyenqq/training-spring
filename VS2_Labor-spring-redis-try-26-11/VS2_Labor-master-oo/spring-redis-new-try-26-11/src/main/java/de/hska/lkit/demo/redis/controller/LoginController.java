@@ -1,6 +1,7 @@
 package de.hska.lkit.demo.redis.controller;
 
 import java.time.Duration;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -14,8 +15,12 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import de.hska.lkit.demo.redis.model.Post;
 import de.hska.lkit.demo.redis.model.User;
+import de.hska.lkit.demo.redis.repo.PostRepository;
 
 /**
  * LoginController: Controller-Klasse zum Aufsetzen neuer Sessions
@@ -25,12 +30,16 @@ import de.hska.lkit.demo.redis.model.User;
  */
 @Controller
 public class LoginController {
+	@Autowired
+	private StringRedisTemplate stringRedisTemplate;
+	@Autowired
+	private PostRepository postRepository;
 	
 	@Autowired
 	private RedisRepository repository;
 	private static final Duration TIMEOUT = Duration.ofMinutes(15);
 	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = {"/login"}, method = RequestMethod.GET)
 	public String anmeldenShowPage(@ModelAttribute User user, Model model) {
 		if (SimpleSecurity.isSignedIn()) {
 			model.addAttribute("user", SimpleSecurity.getName());
@@ -40,7 +49,7 @@ public class LoginController {
 		return "login";
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@RequestMapping(value = {"/login"}, method = RequestMethod.POST)
 	public String login(@ModelAttribute("user") @Valid User user, HttpServletResponse response, Model model) {
 	 // if (repository.auth(user.getName(), user.getPass())) {
 		if (repository.auth(user.getUsername(), user.getPassword())) {
@@ -55,11 +64,32 @@ public class LoginController {
 			
 		//  return "users/" + user.getName();
 		//	return "home/" + user.getUsername();
-			return "home";
+			return "redirect:/home";
 		}
 		model.addAttribute("user", new User());
 		return "login";
 	}
+	/*@RequestMapping(value = "/login", method = RequestMethod.GET, params="forPost")
+	public String addPost(@RequestParam("user") String username,@ModelAttribute Post post, Model model) {
+		post.setAuthorId(username);
+		postRepository.savePost(post);
+		model.addAttribute("message", "User successfully added");
+
+		Map<String, Post> retrievedPast = postRepository.getAllPost();
+
+		model.addAttribute("pasts", retrievedPast);
+		
+		return "allPost";
+	}*/
+	
+	@RequestMapping( value="/home")
+	public String usersHOme(@RequestParam("user") String username, @ModelAttribute("user") @Valid User user, Model model) {
+		
+		model.addAttribute("user", username);
+			return "home";
+	
+	}
+	
 
 	@RequestMapping(value = "/blog/logout", method = RequestMethod.GET)
 	public String logout() {
@@ -69,7 +99,7 @@ public class LoginController {
 		}
 		return "redirect:/";
 	}
-/*	@RequestMapping(value="/logout")
+	@RequestMapping(value="/logout", method = RequestMethod.GET)
 	public String logoutPage (HttpServletRequest req, HttpServletResponse res) {
 		Cookie[] cookies = req.getCookies();
 		   //anfang eigene syso
@@ -83,20 +113,23 @@ public class LoginController {
 			}//ende eigene syso
 			
 			for (Cookie cookie : cookies) {
+				System.out.println("weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
 				if (cookie.getName().equals("auth")) {
+					System.out.println("woooooooooooooooooooooooo");
 					System.out.println("heiß die cokkie auth? :" + cookie.getName().equals("auth"));
 					String auth = cookie.getValue();
 					System.out.println("gibt mir value von cookie und setz es in auth: "+ auth);
-					String uname = template.opsForValue().get("auth:" + auth + ":uid");
-					System.out.println("username syso from logout button" + uname);
+					//String uname = SimpleSecurity.getName();
+					String uname = stringRedisTemplate.opsForValue().get("auth:" + auth + ":uid");
+					System.out.println("username syso from logout button: " + uname);
 					repository.deleteAuth(uname);
 				}
 			}
-		System.out.println(SimpleSecurity.printHello());
+		//System.out.println(SimpleSecurity.printHello());
 		//System.out.println(SimpleSecurity.isSignedIn());
 		//String name = SimpleSecurity.getName();
 		//repository.deleteAuth(name);
 	    return "redirect:/login";
 	
-	}*/
+	}
 }

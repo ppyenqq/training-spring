@@ -5,23 +5,23 @@ import java.io.Serializable;
 public class Post implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private String Attribute;
+	//private String Attribute;
 	private String postId;
 	private String content;
 	private String authorId;
-	private String date;
+	//private String date;
 
 	public Post() {
 
 	}
 
-	public String getAttribute() {
+	/*public String getAttribute() {
 		return Attribute;
 	}
 
 	public void setAttribute(String attribute) {
 		Attribute = attribute;
-	}
+	}*/
 
 	public String getPostId() {
 		return postId;
@@ -47,12 +47,12 @@ public class Post implements Serializable {
 		this.authorId = authorId;
 	}
 
-	public String getDate() {
+	/*public String getDate() {
 		return date;
 	}
 
 	public void setDate(String date) {
 		this.date = date;
 	}
-
+*/
 }
