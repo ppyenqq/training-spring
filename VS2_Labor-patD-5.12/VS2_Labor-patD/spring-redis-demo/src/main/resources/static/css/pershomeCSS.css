@@ -1,0 +1,431 @@
+@charset "ISO-8859-1";
+body {
+  min-height: 2000px;
+  padding-top: 70px;
+  background-color: #fafafa;
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+}
+.navi{
+	margin: 0;
+	padding: 0;
+}
+.navbar{
+	background-color: white;
+	height: 72px;
+	
+	font-weight: 500;
+	font-size: 1.1em;
+	
+}
+a{
+	color: #838383;
+}
+
+.navborder{
+	padding: 25px 0;
+	text-align: center;
+
+}
+.navborder:nth-child(2){
+	padding: 20px 12px;
+}
+.navborder:first-child{
+	
+	height: 72px;
+	text-align: left;
+	padding-left: 6px;
+}
+.material-icons.md-48 { 
+	font-size: 25px;
+	margin-top: 4px; 
+	color: #c2c2c2;
+}
+.search-icon{
+	float: left;
+}
+.form-control{
+	border-color:transparent;
+	width: 82%;
+	box-shadow: none;
+}
+.form-control::-moz-placeholder {
+	
+  color: #c2c2c2;
+  font-weight: 400;
+}
+.form-control:-ms-input-placeholder {
+	
+  color: #c2c2c2;
+  font-weight: 400;
+}
+.form-control::-webkit-input-placeholder {
+	
+  color: #c2c2c2;
+  font-weight: 500;
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXX
+Mainbody
+XXXXXXXXXXXXXXXXXXXXXXXX*/
+.mainbody{
+
+}
+.profile{
+	margin-top: 10px;
+	margin-bottom: 50px;
+	padding-top: 20px;	
+	height: 100px;
+	
+}
+.person-icon{	
+	margin: 0 ;
+	padding: 0 ;
+	font-size: 7em !important;
+	background-color: white;
+	float: left;
+	border-radius: 50%;
+	box-shadow: 2px 2px 2px #efefef;
+}
+#username{
+	letter-spacing: 1px;
+	font-size: 1.6em;
+	margin-top: 30px;
+	text-align: center;
+
+}
+.hey{
+	margin-left: 20px;
+	margin-bottom: 30px;
+}
+
+.follow{
+	padding: 9px 9px;
+	border: solid 2px #838383;
+	border-radius: 25px;
+	display: block;
+	margin: 15px 0px;
+	font-size: 1.5em;
+	text-align: center;
+}
+.follow:active{
+	background-color: #838383;
+	text-decoration: none;
+	color: white;
+}
+.follow:hover{
+	text-decoration: none;
+	color: #838383;
+}
+/*XXXXXXXXXXXXXXXXXXXXXXXX
+timeline and blog
+XXXXXXXXXXXXXXXXXXXXXXXxx*/
+.blogging{
+	margin: 40px 0px 0 0px;
+}
+textarea{
+	resize: none;
+	
+}
+.postInput{
+	border-color: #efefef;
+	width: 100%;
+	height: 80px;
+	box-shadow: 2px 2px 9px #efefef;
+}
+h4{
+	color: #9a9a9a;
+	letter-spacing: 0px;
+}
+
+
+#post{
+	float: right;
+	font-size: 1em;
+	padding-left: 40px;
+	padding-right: 40px;
+	margin-left: 10px;
+	
+	margin-bottom: 60px;
+}
+
+.btn{
+	background-color: transparent;
+	font-weight: 500;
+	color: #838383;
+}
+
+.timeline{
+	width: 100%;
+	height: 80px;
+	
+	clear: both;
+}
+#timetitle{
+	float: left;
+	margin-bottom:20px;
+	margin-right:5px;
+}
+.dropd{
+	float: right;
+	padding: 3px 5px;
+	margin: 7px 0 0 0;
+	border-color: #efefef;
+}
+.dropdown-menu{
+	clear: both;
+	min-width: 0px;
+	float: right;
+	position: static;
+	box-shadow: none;
+	margin-bottom: 10px;
+	padding: 2px 13px;
+}
+.open>.dropdown-toggle.btn-primary:hover {
+    color: #fff;
+    background-color: #469df3c9;
+    border-color: transparent;
+}
+
+.author{
+	
+	padding-left:2%;
+	float:left;
+	width:50%;
+	font-size:1.2em;
+}
+.date{
+	width:50%;
+	float:right;
+	text-align:right;
+	padding-right:2%;
+	color:#a5a1a1;
+	font-size:1em;
+}
+.content{
+	margin-top:40px;;
+	padding-left:2%;
+	
+}
+.onepost{
+	padding-top:13px;
+	border: solid 1px;
+	background-color: white;
+	border-color: #efefef;
+	border-radius: 3px;
+	margin-bottom: 10px;
+}
+.private, .global{
+	float: left;
+	font-size: 0.8em;
+	padding-left: 8px;
+	padding-right: 8px;
+	margin-left: 5px;
+	margin-top:4px;
+	border: solid 1px #d2d1d1;
+	border-radius: 5px;
+}
+
+
+@media (min-width: 768px){
+	.navborder:first-child{
+		padding-left: 42px;
+	}
+	#username{
+		float: left;
+		margin-left: 30px;
+	}
+	.profile{
+		width: 50%;
+		float: left;
+	}
+	#follower, #following{
+		display: inline;
+		float: right;
+		
+		padding: 6px 12px;
+
+	}
+	#following{
+		margin-right: 20px;
+	}
+	.followbut{
+		padding-top: 35px;
+	}
+	#logout{
+	padding: 7px 10px;
+	border: solid 2px #838383;
+	border-radius: 25px;
+	}
+	#logout:hover{
+		background-color: #838383;
+		text-decoration: none;
+		color: white;
+	}
+	.form-control{
+		width: 90%;
+	}
+	#post{	
+	margin-right:10%
+}
+}
+
+
+
+
+@media (min-width: 992px) {
+.navi{
+	margin-left: 40px;
+}
+.navborder:nth-child(2){
+	padding: 19px 20px;
+}
+.navborder:first-child{
+	border-right:solid 1px;
+	border-color: #e7e7e7;
+	padding-left: 60px;
+}
+.form-control{
+	width: 95%;
+}
+
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+	Mainbody
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+.mainbody{
+	
+}
+.profile{
+	width: 100%;
+	margin-top: 40px;
+	padding-top: 30px;
+	background-color: white;
+	height: 230px;
+	text-align: center;
+	float: none;
+	box-shadow: 2px 2px 3px #efefef;
+}
+.person-icon{	
+	font-size: 8em !important;
+	float: none;
+}
+#username{
+	font-size: 1.6em;
+	float: none;
+	margin-left: 0;
+}
+.hey{
+	border-right:solid 1px;
+	border-color: #e7e7e7;
+	height: 700px;
+	margin-left: 34px;
+	padding-left: 0;
+}
+
+#follower , #following{
+	float: none;
+	text-align: center;
+	margin-top: 30px;
+	display: block;
+	margin-right: 0;
+
+}
+.followbut{
+	padding-top: 5px;
+}
+
+.follow:hover{
+	background-color: #838383;
+	text-decoration: none;
+	color: white;
+}
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+ Timeline and Blog right part
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+.blogging{
+	margin: 60px 100px 0 70px;
+}
+}
+
+.search{
+	width: 20%;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+	color: #c2c2c2;
+	font-weight: 400;
+}
+.search:focus {
+    width: 82%;
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #606060; /* grey*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 80px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #c4c4c4;
+    display: block;
+    transition: 0.3s;
+}
+.sidenav td {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #c4c4c4;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav td:hover {
+    color: #111;
+	cursor:pointer;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+#closenav{
+    font-size: 20px;
+    right: 10px;
+	transition: 0.3s;
+}
+.userIconSearch{
+	float: left;
+	margin-right: 20px;
+	margin-top:2px;	
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+	border-top: none;
+    border-bottom: 1px solid #ddd;
+}
+#alluserSearch{
+	font-size: 0.8em;
+}

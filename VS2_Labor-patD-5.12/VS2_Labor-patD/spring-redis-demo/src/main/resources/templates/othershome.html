@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>Micro Blogging - <!-- ToDo name -->s Profile </title>
+    <!-- Bootstrap core CSS -->   
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <!-- Custom styles for this template -->
+    <link href="../../css/otherhomeCSS.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"></link>
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"></link>
+      
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,800,900" rel="stylesheet"/> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/> 
+ </head>
+
+  <body>
+<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid navi">
+        <div id="navbar" class="">
+          <div class=" col-md-2 col-xs-2 navborder">
+            <a href="home">Home</a>
+          </div>         
+          <div class="col-md-8 col-xs-7 navborder">
+            <i class="material-icons md-48 search-icon">search</i>
+            <form>
+              <input class="form-control" placeholder="Type in to Search" aria-label="Search" type="text" />
+            </form>
+          </div>
+          <div class="col-md-2 col-xs-3 navborder">
+            <a href="login" id="logout">Log out</a>         
+          </div>
+        </div>
+      </div>
+</nav>
+
+
+    <div class="container-fluid mainbody">
+      <div class="row">
+        <div class="col-md-2 hey">
+          <div class="profile">
+            <i class="person-icon material-icons glyphicon ">person</i>
+            <p id="username" th:text="${otheruser}">Username</p>
+             
+          </div> 
+          <div class="followbut">
+            <a href="#" class="follow" id="follower">Follow</a>    
+            <a href="#" class="follow" id="following">Unfollow</a>  
+          </div>
+          <div style="clear: both"></div>
+        </div>
+
+        <div class="col-md-9">
+          <div class="blogging">
+            <h4 id="timetitle">Timeline</h4>
+            <div class="timeline">
+              <tbody class="timeline-body">
+				<tr class="timeline-body" th:each="element : ${otherUserPostlist}">
+					<div class="onepost">
+					<p  class="author"><td th:text="${element.authorId}">author</td></p>
+					<p class="date"><td th:text="${element.date}">Some name</td></p>
+					<p class="content"><td th:text="${element.content}">Some name</td></p>
+					</div>
+					
+				</tr>
+			</tbody>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+  </body>
+</html>
