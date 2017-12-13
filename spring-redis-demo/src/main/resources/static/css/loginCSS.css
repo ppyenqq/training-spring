@@ -1,0 +1,135 @@
+body{
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;	
+	margin: 0;
+	padding: 9;
+	box-sizing: border-box;
+}
+.one{
+	background-color: #64D6C4;
+	height: 600px;
+  	font-family: 'Raleway', sans-serif;
+	font-size: 2.9em;
+	font-weight: 600;
+	color: #535353;
+	text-align: center;
+	background-size: cover;
+}
+.lefti{
+	margin-top: 0;
+	padding-top: 65px;
+	padding-bottom: 50px;
+}
+span{
+  font-size: 0.5em;
+  color: #fff;
+  padding-right: 2px;
+}
+.img-responsive{
+	margin: auto;
+}
+.two{
+	background-color: #34455C ;
+	height: 600px;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700; 
+}
+.form-signin {
+  max-width: 400px;
+  padding: 100px 15px 85px 15px;
+  margin: 0px auto; 
+  color: #fff;
+}
+.form-signin .form-signin-heading,
+ .form-signin {
+
+  text-align: left;
+  color: #e3e3e3;
+}
+.form-signin .form-control {
+  border:none;
+  border-bottom: 1px solid white;
+  border-radius: 0;
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 1.5em;
+  color: #fff;
+  border-color: #ffffff75;
+  background-color:  transparent;
+}
+
+h2{
+	font-size: 20px;
+	padding-bottom: 70px;
+}
+.form-signin input[type="email"] {
+  margin-bottom: 20px;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 90px;
+}
+.form-control::-moz-placeholder {
+  color: #fffdfd73;
+  font-weight: 100;
+}
+.form-control:-ms-input-placeholder {
+  color: #fffdfd73;
+  font-weight: 100;
+}
+.form-control::-webkit-input-placeholder {
+  color: #fffdfd73;
+  font-weight: 100;
+}
+.btn{
+	background-color: #64D6C4;
+    background: -webkit-linear-gradient(#80E3D1 , #53C5B9 ); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#80E3D1 , #53C5B9 ); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#80E3D1 , #53C5B9 ); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#80E3D1 , #53C5B9 ); /* Standard syntax */
+
+	border-radius: 25px;
+	box-shadow: 3px 5px 20px #333333;
+	margin-left:20px; 
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+.btn:focus{
+	outline:none;
+}
+.btn-lg{
+  font-size: 1.8;
+  float: right;
+}
+.btn-block{
+  width: 40%;
+}
+.btn-block:first-child {
+ margin-right: 4%;
+}
+.btn-block+.btn-block{
+  margin-top: 0;
+}
+input{
+  color: white;
+}
+
+@media (min-width: 768px) {
+.one{	
+	height: 720px;
+}
+.lefti{
+padding-top: 95px;
+}
+.two{
+	height: 720px;
+}
+.form-signin {
+  padding: 175px 15px 85px 15px;
+}
+.btn-block{
+  width: 32%;
+}
+}
