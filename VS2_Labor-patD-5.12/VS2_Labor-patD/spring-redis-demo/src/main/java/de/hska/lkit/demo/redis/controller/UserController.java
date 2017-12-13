@@ -115,6 +115,7 @@ public class UserController {
 		
 		}else {			
 			model.addAttribute("allSearchDisplay",  userRepo.findUsersWith(searchPattern3));
+			model.addAttribute("searchFlag", true);
 		}
 		
 		return "home";
