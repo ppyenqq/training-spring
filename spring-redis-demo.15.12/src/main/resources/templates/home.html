@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>Micro Blogging - Welcome <!--  ToDo name --></title>
+    <!-- Bootstrap core CSS -->   
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    <!-- Custom styles for this template -->
+    <link href="../../css/personhomeCSS.css" rel="stylesheet"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"></link>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,800,900" rel="stylesheet"> </link>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> </link>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"></link>
+
+   
+  </head>
+
+  <body>
+<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid navi">
+        <div id="navbar" class="">
+          <div class=" col-md-2 col-xs-2 navborder" onclick="closeNav()">
+            <a href="home" id="homenav" >Home</a>
+			<a href="javascript:void(0)" id="closenav" onclick="closeNav()">X  Close</a>
+          </div>         
+          <div class="col-md-8 col-xs-7 navborder">
+            <i class="material-icons md-48 search-icon">search</i>
+            <form  method="post" id="yep">
+              <input onclick="openNav()" class="form-control search" placeholder="Type in to Search" aria-label="Search" type="text"  name="startSearching"/>
+            </form>
+          </div>
+          <div class="col-md-2 col-xs-3 navborder">
+         <a href="/logout" id="logout">Log out</a> <!--onclick="snackbar()"-->
+          </div>
+        </div>
+      </div>
+</nav>
+
+<div id="snackbar">Log out successful</div>
+
+<div id="mySidenav" class="sidenav">
+
+		<table class="table table-hover usertable">
+			<tbody>
+				<tr  th:each="userSearch: ${allSearchDisplay}">
+					
+				<td>
+				<a th:href="|/user/${userSearch}|">
+				<span class="glyphicon glyphicon-user userIconSearch"> </span>	<p id="alluserSearch" th:text="${userSearch}" ></p></a></td>
+				</tr>
+			</tbody>
+		</table>
+</div>
+
+    <div class="container-fluid mainbody">
+      <div class="row">
+        <div class="col-md-2 hey">
+          <div class="profile">
+            <i class="person-icon material-icons glyphicon ">person</i>
+            <p id="username" th:text="'Hello, ' + *{user.username} + '!'" >Username</p>
+             
+          </div> 
+          <div class="followbut">
+            <a href="follower" class="follow" id="follower">Follower</a>    
+            <a href="/user/following" class="follow" id="following">Following</a>  
+          </div>
+          <div style="clear: both"></div>
+        </div>
+
+        <div class="col-md-9">
+          <div class="blogging">
+            <h4>Share your news </h4>
+            <form  
+				th:object="${post}" method="post" > 
+                <div class="form-group">
+					<input type="text" placeholder="" id="postArea" th:field="*{content}" class="form-control postInput" />
+				</div>
+					<div class="form-group">
+				 <input type="hidden" th:field="*{authorId}" />
+			</div>
+                 <!--  <input th:field="*{content}" type="text"  class="form-control"  placeholder="Say something"  /> -->
+					 <button class="btn follow " id="post" type="submit">Post</button> 
+                
+                </form> 
+             
+            <div style="clear: both"></div>
+            
+            
+            <h4 id="timetitle">Timeline</h4>
+            <form  method="post" > 
+               
+			    <button class="btn private" type="submit" name = "private">private</button>
+			    <button  class="btn global"  type="submit" name = "global">global</button>
+			   
+			  
+					<!--  <button class="btn follow " id="post" type="submit">Post</button>  -->
+                
+            </form> 
+             
+            <div class="timeline">
+			<tbody class="timeline-body">
+				<tr class="timeline-body" th:each="element : ${oneUserPostlist}">
+					<div class="onepost">
+					<p  class="author"><td th:text="${element.authorId}">author</td></p>
+					<p class="date"><td th:text="${element.date}">Some name</td></p>
+					<p class="content"><td th:text="${element.content}">Some name</td></p>
+					</div>
+					
+				</tr>
+			</tbody>
+		
+              <!--  <tbody>
+				    <tr th:each="item2: ${oneUserPostlist}">
+				    	<p th:text="space00"> </p>
+						<td th:text="${item2}" />
+				       
+				    </tr>
+				</tbody> -->
+				
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script  type="text/javascript" src="../../js/homejs.js" ></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          <script th:inline="javascript">
+   
+			/*<![CDATA[*/
+			   			 
+			document.body.onload = function() {
+				typeWriter();
+				myFunction();
+			}; 
+
+			 function myFunction() {	
+			       var searchFlagBoolean = /*[[${searchFlag}]]*/ 'boolean';
+			       if( searchFlagBoolean==true){
+				    	  openNav();
+				   }
+			 }
+			 
+			
+			    	
+			
+			    
+			/*]]>*/
+    
+	</script>
+  </body>
+</html>
