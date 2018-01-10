@@ -196,6 +196,27 @@ public class UserController {
 		// gibt mir die HTML-Seite users zurück 
 		return "following";
 	}
+	/**
+	 * redirect to user's following page
+	 * 
+	 * @return
+	 */
+	@RequestMapping(value = "/follower", method = RequestMethod.GET)
+	public String getUsersFollower(@ModelAttribute User user, Model model) {
+		System.out.println("***Klasse:UserController, Methode: getUsersFollowing wurde aufgerufen.***");
+	
+		//hiermmit hol ich mir alle User aus der Repository raus (bemekung: die sind nicht geordnet)
+		Map<String, User> retrievedUsers = userRepo.getAllFollowers(user);
+		
+		//fügt dem model die ganzen Users zu und beeinflusst gleichzeitig die View/HTML, wenn ihr in
+		// "users.html" guckt gibt es ne deklaration "elemenent : ${users}", das sagt dem HTML ja an diesem platz
+		// kannst du den User und seine Daten hinzufügen
+		model.addAttribute("follower", retrievedUsers);
+		
+		
+		// gibt mir die HTML-Seite users zurück 
+		return "follower";
+	}
 	
 	/**
 	 * redirect to user's following page
