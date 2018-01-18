@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>Micro Blogging - Followers</title>
+    <!-- Bootstrap core CSS -->   
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <!-- Custom styles for this template -->
+    <link href="../../css/followerCSS.css" rel="stylesheet"/>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"></link>
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"></link>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,800,900" rel="stylesheet"/> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/> 
+  </head>
+  <body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid navi">
+        <div id="navbar" class="">
+          <div class=" col-md-2 col-xs-2 navborder" onclick="closeNav()">
+            <a href="home" id="homenav" >Home</a>			
+          </div>         
+          <div class="col-md-8 col-xs-7 navborder">
+           <!--  <i class="material-icons md-48 search-icon">search</i>
+            <form  method="post" id="yep">
+              <input onclick="openNav()" class="form-control search" placeholder="Type in to Search" aria-label="Search" type="text"  name="startSearching"/>
+            </form> -->
+          </div>
+          <div class="col-md-2 col-xs-3 navborder">
+         <a href="/logout" id="logout">Log out</a> 
+          </div>
+        </div>
+      </div>
+</nav>
+     <h1 id="followhead">My Follower</h1>     
+   
+	<!-- 	<table class="table table-hover usertable">
+			<tbody>
+				<tr  th:each="userFollowerDisplay: ${follower}">
+					
+				<td>
+				<a th:href="|/user/${userFollowerDisplay}|">
+				<span class="glyphicon glyphicon-user userIconSearch"> </span>	<p id="alluserSearch" th:text="${userFollowerDisplay}" ></p></a></td>
+				</tr>
+			</tbody>
+		</table> -->
+
+    <div class="container">
+        <div class="row">
+		<tr  th:each="userFollowerDisplay: ${follower}">
+            <td>
+	            <div class="col-md-3 col-sm-4 col-xs-6">
+	              <div class="profile">
+	              <a th:href="|/user/${userFollowerDisplay}|">
+		              <i class="person-icon material-icons glyphicon ">person</i>
+		              <p id="username" th:text="${userFollowerDisplay}">Username</p>
+	              </a>
+	              </div> 
+	            </div>
+	            </td></tr>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+  </body>
+</html>

@@ -1,0 +1,405 @@
+body {
+  min-height: 2000px;
+  padding-top: 70px;
+  background-color: #fafafa;
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+}
+.navi{
+	margin: 0;
+	padding: 0;
+}
+.navbar{
+	background-color: white;
+	height: 72px;
+	
+	font-weight: 500;
+	font-size: 1.1em;
+	
+}
+
+a{
+	color: #838383;
+}
+
+.navborder{
+	padding: 25px 0;
+	text-align: center;
+
+}
+.navborder:nth-child(2){
+	padding: 20px 12px;
+}
+.navborder:first-child{
+	
+	height: 72px;
+	text-align: left;
+	padding-left: 6px;
+}
+.material-icons.md-48 { 
+	font-size: 25px;
+	margin-top: 4px; 
+	color: #c2c2c2;
+}
+.search-icon{
+	float: left;
+}
+.sidenav {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 1000;
+    top: 0px;
+    left: 0px;
+    background-color: #606060;
+    overflow-x: hidden;
+    padding-top: 80px;
+    transition: all 0.5s ease 0s;
+}
+.userIconSearch{
+	float: left;
+	margin-right: 20px;
+	margin-top:2px;	
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+	border-top: none;
+    border-bottom: 1px solid #ddd;
+}
+#alluserSearch{
+	font-size: 0.8em;
+}
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #c4c4c4;
+    display: block;
+    transition: 0.3s;
+}
+.sidenav td {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #c4c4c4;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav td:hover {
+    color: #111;
+	cursor:pointer;
+}
+.form-control{
+	border-color:transparent;
+	width: 82%;
+	box-shadow: none;
+}
+.form-control::-moz-placeholder {
+	
+  color: #c2c2c2;
+  font-weight: 400;
+}
+.form-control:-ms-input-placeholder {
+	
+  color: #c2c2c2;
+  font-weight: 400;
+}
+.form-control::-webkit-input-placeholder {
+	
+  color: #c2c2c2;
+  font-weight: 500;
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXX
+Mainbody
+XXXXXXXXXXXXXXXXXXXXXXXX*/
+.mainbody{
+
+}
+.profile{
+	margin-top: 10px;
+	margin-bottom: 50px;
+	padding-top: 20px;	
+	height: 100px;
+	
+}
+.person-icon{	
+	margin: 0 ;
+	padding: 0 ;
+	font-size: 7em !important;
+	background-color: white;
+	float: left;
+	border-radius: 50%;
+	box-shadow: 2px 2px 2px #efefef;
+}
+#username{
+	letter-spacing: 1px;
+	font-size: 1.6em;
+	margin-top: 30px;
+	text-align: center;
+
+}
+.hey{
+	margin-left: 20px;
+	margin-bottom: 30px;
+}
+
+.follow{
+	padding: 9px 9px;
+	border: solid 2px #838383;
+	border-radius: 25px;
+	display: block;
+	margin: 15px 0px;
+	font-size: 1.5em;
+	text-align: center;
+	width: 100%;
+	background-color:transparent;
+}
+.follow:active{
+	background-color: #838383;
+	text-decoration: none;
+	color: white;
+}
+.follow:hover{
+	text-decoration: none;
+	color: #838383;
+}
+/*XXXXXXXXXXXXXXXXXXXXXXXX
+timeline and blog
+XXXXXXXXXXXXXXXXXXXXXXXxx*/
+.blogging{
+	margin: 40px 0px 0 0px;
+}
+h4{
+	color: #9a9a9a;
+	letter-spacing: 0px;
+}
+
+.timeline{
+	width: 100%;
+	height: 80px;
+	
+	clear: both;
+}
+#timetitle{
+	float: left;
+	margin-bottom:20px;
+	margin-right:5px;
+}
+.author{
+	
+	padding-left:2%;
+	float:left;
+	width:50%;
+	font-size:1.2em;
+}
+.date{
+	width:50%;
+	float:right;
+	text-align:right;
+	padding-right:2%;
+	color:#a5a1a1;
+	font-size:1em;
+}
+.content{
+	margin-top:40px;;
+	padding-left:2%;
+	
+}
+.onepost{
+	padding-top:13px;
+	border: solid 1px;
+	background-color: white;
+	border-color: #efefef;
+	border-radius: 3px;
+	margin-bottom: 10px;
+}
+
+
+
+@media (min-width: 768px){
+	.navborder:first-child{
+		padding-left: 42px;
+	}
+	#username{
+		float: left;
+		margin-left: 30px;
+	}
+	.profile{
+		width: 50%;
+		float: left;
+	}
+	#follower, #followingy{
+		display: inline;
+		float: right;
+		padding: 6px 12px;
+
+	}
+	
+	#followerCheck, #followingGrey{
+		display: inline;
+		float: right;
+		padding: 6px 12px;
+
+	}
+	 #followingGrey{
+		margin-right: 20px;
+	}
+	.followbut{
+		padding-top: 35px;
+	}
+	#logout{
+	padding: 7px 10px;
+	border: solid 2px #838383;
+	border-radius: 25px;
+	}
+	#logout:hover{
+		background-color: #838383;
+		text-decoration: none;
+		color: white;
+	}
+	.form-control{
+		width: 90%;
+	}
+}
+
+
+
+
+@media (min-width: 992px) {
+.navi{
+	margin-left: 40px;
+}
+.navborder:nth-child(2){
+	padding: 19px 20px;
+}
+.navborder:first-child{
+	border-right:solid 1px;
+	border-color: #e7e7e7;
+	padding-left: 60px;
+}
+.form-control{
+	width: 95%;
+}
+
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+	Mainbody
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+.profile{
+	width: 100%;
+	margin-top: 40px;
+	padding-top: 30px;
+	background-color: white;
+	height: 230px;
+	text-align: center;
+	float: none;
+	box-shadow: 2px 2px 3px #efefef;
+}
+.person-icon{	
+	font-size: 8em !important;
+	float: none;
+}
+#username{
+	font-size: 1.6em;
+	float: none;
+	margin-left: 0;
+}
+.hey{
+	border-right:solid 1px;
+	border-color: #e7e7e7;
+	height: 700px;
+	margin-left: 34px;
+	padding-left: 0;
+}
+
+#follower, #following{
+	float: none;
+	text-align: center;
+	margin-top: 20px;
+	display: block;
+	margin-right: 0;
+
+}
+
+#followerCheck, #followingGrey{
+	float: none;
+	text-align: center;
+	margin-top: 20px;
+	display: block;
+	margin-right: 0;
+
+}
+.followbut{
+	padding-top: 5px;
+}
+
+.follow:hover{
+	background-color: #838383;
+	text-decoration: none;
+	color: white;
+}
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+ Timeline and Blog right part
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+.blogging{
+	margin: 50px 100px 0 70px;
+}
+}
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #5b5b5b; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 5px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+    visibility: visible; /* Show the snackbar */
+
+/* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+.greyOut {
+	background-color: #D3D3D3;
+    color: #fff;
+}

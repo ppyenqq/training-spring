@@ -1,0 +1,83 @@
+body {
+ 
+background-color: white;
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+}
+img{
+	margin:150px auto 0 auto;
+
+}
+
+.fadeInUp {
+	opacity: 1;
+	animation-name: fadeInUp;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+
+.fadeInDown {
+	opacity: 1;
+	animation-name: fadeInDown;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+#success{
+	text-align: center;
+	font-size: 2em;
+	color: #838383;
+	font-weight: 500;
+	letter-spacing: 5px;
+}
+.btn{
+	font-size: 1.3em;
+	color: #03BFFF;
+	background-color: white;
+	border: solid 1px #03BFFF;
+	display: block;
+	margin: 30px auto;
+}
+.btn:hover{
+	
+	background-color: #03BFFF;
+	color: white;
+	border-color:transparent;
+}
+.btn-success:active:focus{
+	outline:none;
+	background-color:transparent;
+	color: #03BFFF;
+	border-color: #03BFFF;
+}
+.btn-success:active{
+	color: #03BFFF;
+	background-color:transparent;
+	border-color: #03BFFF;
+	
+}
