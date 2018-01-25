@@ -1,0 +1,57 @@
+{
+  "groups": [
+    {
+      "name": "apress.redis",
+      "type": "de.hska.lkit.demo.redis.configuration.SimpleRedisProperties",
+      "sourceType": "de.hska.lkit.demo.redis.configuration.SimpleRedisProperties"
+    },
+    {
+      "name": "apress.ws",
+      "type": "de.hska.lkit.demo.redis.configuration.SimpleWebSocketsProperties",
+      "sourceType": "de.hska.lkit.demo.redis.configuration.SimpleWebSocketsProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "apress.redis.rate",
+      "type": "java.lang.String",
+      "sourceType": "de.hska.lkit.demo.redis.configuration.SimpleRedisProperties"
+    },
+    {
+      "name": "apress.redis.topic",
+      "type": "java.lang.String",
+      "sourceType": "de.hska.lkit.demo.redis.configuration.SimpleRedisProperties"
+    },
+    {
+      "name": "apress.ws.app-destination-prefix",
+      "type": "java.lang.String",
+      "sourceType": "de.hska.lkit.demo.redis.configuration.SimpleWebSocketsProperties"
+    },
+    {
+      "name": "apress.ws.endpoint",
+      "type": "java.lang.String",
+      "sourceType": "de.hska.lkit.demo.redis.configuration.SimpleWebSocketsProperties"
+    },
+    {
+      "name": "apress.ws.mapping",
+      "type": "java.lang.String",
+      "sourceType": "de.hska.lkit.demo.redis.configuration.SimpleWebSocketsProperties"
+    },
+    {
+      "name": "apress.ws.mapping-reply",
+      "type": "java.lang.String",
+      "sourceType": "de.hska.lkit.demo.redis.configuration.SimpleWebSocketsProperties"
+    },
+    {
+      "name": "apress.ws.rate",
+      "type": "java.lang.String",
+      "sourceType": "de.hska.lkit.demo.redis.configuration.SimpleWebSocketsProperties"
+    },
+    {
+      "name": "apress.ws.topic",
+      "type": "java.lang.String",
+      "sourceType": "de.hska.lkit.demo.redis.configuration.SimpleWebSocketsProperties"
+    }
+  ],
+  "hints": []
+}
